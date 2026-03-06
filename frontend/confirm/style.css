@@ -1,0 +1,198 @@
+/* --- GERAL E VARIÁVEIS --- */
+:root {
+    --primary-color: #007bff; /* Azul padrão */
+    --primary-hover: #0069d9; /* Azul um pouco mais escuro para hover */
+    --success-color: #28a745;
+    --background-color: #f4f5f7;
+    --card-background: #ffffff;
+    --text-color: #555;
+    --heading-color: #1c1c1e;
+    --border-color: #e9e9eb;
+    --shadow-color: rgba(0, 0, 0, 0.07);
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- CABEÇALHO (Consistente) --- */
+.main-header {
+    background-color: var(--card-background);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.logo i {
+    margin-right: 10px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.main-content {
+    padding: 30px 20px;
+}
+
+/* --- LAYOUT DE CONFIRMAÇÃO (Simplificado) --- */
+.confirmation-layout {
+    background: var(--card-background);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    padding: 30px 40px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.confirmation-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.confirmation-header h1 {
+    font-size: 2rem;
+    color: var(--heading-color);
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.confirmation-header p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.info-section {
+    margin-bottom: 30px;
+}
+
+.info-section h4 {
+    font-size: 1.3rem;
+    color: var(--heading-color);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.course-summary {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.course-summary img {
+    width: 120px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.course-summary-details h5 {
+    margin: 0 0 5px;
+    font-size: 1.2rem;
+    color: var(--heading-color);
+}
+
+.course-summary-details p {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.confirmation-footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* --- BOTÃO DE AÇÃO (Estilo do botão azul) --- */
+.action-button.primary {
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.action-button.primary:hover {
+    background-color: var(--primary-hover);
+}
+
+/* --- SPINNER --- */
+.loading-spinner-container {
+    display: flex; /* Alterado para flex para ser visível por padrão */
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #e3e3e3;
+    border-top: 6px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* --- MENSAGEM DE ERRO --- */
+.error-message {
+    color: #dc3545; /* Vermelho para erros */
+    font-weight: 600;
+    text-align: center;
+    padding: 20px;
+}

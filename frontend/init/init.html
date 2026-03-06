@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão da Matrícula - Cursos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cabeçalho Padrão da Plataforma -->
+    <header class="main-header">
+        <div class="header-content container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Cursos</span>
+            </div>
+            <div class="user-profile">
+                <img src="https://wwws.cnpq.br/cvlattesweb/pkg_util_img.show_foto?v_cod=K1595987Z3" alt="Foto do Usuário">
+                <span>Mateus Cruz</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <div class="breadcrumb">
+            <!-- O link para voltar pode ser ajustado conforme a estrutura de pastas -->
+            <a href="javascript:history.back( )"><i class="fas fa-arrow-left"></i> Voltar</a>
+        </div>
+        
+        <div class="loading-spinner-container" style="display: flex;">
+            <div class="loading-spinner"></div>
+        </div>
+        
+        <!-- O conteúdo da confirmação será injetado aqui -->
+        <div id="resultado-confirmacao"></div>
+    </main>
+    
+    <script src="init.js"></script>
+</body>
+</html>

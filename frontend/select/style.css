@@ -1,0 +1,780 @@
+/* --- GERAL E VARIÁVEIS --- */
+:root {
+    --primary-color: #007bff; /* Azul padrão */
+    --primary-hover: #0069d9; /* Azul um pouco mais escuro para hover */
+    --background-color: #f4f5f7;
+    --card-background: #ffffff;
+    --text-color: #555;
+    --heading-color: #1c1c1e;
+    --border-color: #e9e9eb;
+    --shadow-color: rgba(0, 0, 0, 0.07);
+    --star-color: #ffc107;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- CABEÇALHO (Consistente com a outra página) --- */
+.main-header {
+    background-color: var(--card-background);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.logo i {
+    margin-right: 10px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-profile span {
+    font-weight: 600;
+    color: var(--heading-color);
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.main-content {
+    padding: 30px 20px;
+}
+
+.breadcrumb {
+    margin-bottom: 20px;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.course-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 992px) {
+    .course-layout {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+/* --- COLUNA PRINCIPAL (DETALHES) --- */
+.course-main-column {
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.course-main-column h1 {
+    font-size: 2.2rem;
+    color: var(--heading-color);
+    margin: 0 0 10px;
+}
+
+.provider-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.provider-logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.provider-name {
+    font-weight: 600;
+}
+
+.course-main-column .short-desc {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.course-section h4 {
+    font-size: 1.4rem;
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin: 30px 0 20px;
+}
+
+.course-section p, .course-section ul {
+    line-height: 1.7;
+}
+
+.course-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.course-section ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.course-section ul li::before {
+    content: '\f00c'; /* Ícone de check do Font Awesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 4px;
+}
+
+.creator-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.creator-info img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.creator-info h5 {
+    margin: 0 0 5px;
+    font-size: 1.2rem;
+    color: var(--heading-color);
+}
+
+/* --- COLUNA LATERAL (CARD DE AÇÃO) --- */
+.course-sidebar {
+    position: sticky;
+    top: 100px; /* Abaixo do header */
+}
+
+.action-card {
+    background: var(--card-background);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.action-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.action-card-body {
+    padding: 25px;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--heading-color);
+}
+
+.price.free {
+    color: var(--primary-color);
+}
+
+.rating {
+    display: block;
+    margin-top: 5px;
+    color: #777;
+}
+
+.rating span {
+    color: var(--star-color);
+    letter-spacing: 1px;
+}
+
+.access-button-big {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.access-button-big:hover {
+    background-color: var(--primary-hover);
+}
+
+.course-meta {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.course-meta li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.course-meta i {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    width: 20px;
+    text-align: center;
+}
+
+/* --- MODAL DE INSCRIÇÃO --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 650px;
+    position: relative;
+    transform: scale(0.95);
+    transition: transform 0.3s;
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.enrollment-section h4 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--heading-color);
+}
+
+.turma-selector-group, .enrollment-form {
+    margin-top: 20px;
+}
+
+#turma-select, .enrollment-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--background-color);
+}
+
+.enrollment-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+@media (min-width: 768px) {
+    .enrollment-form {
+        grid-template-columns: 1fr 1fr;
+    }
+    .form-group.full-width {
+        grid-column: span 2;
+    }
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.modal-content .access-button-big {
+    margin-top: 30px;
+}
+
+/* --- SPINNER --- */
+.loading-spinner-container {
+    display: none;
+    justify-content: center;
+    padding: 50px;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #e3e3e3;
+    border-top: 6px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+/* --- GERAL E VARIÁVEIS --- */
+:root {
+    --primary-color: #007bff; /* Azul padrão */
+    --primary-hover: #0069d9; /* Azul um pouco mais escuro para hover */
+    --background-color: #f4f5f7;
+    --card-background: #ffffff;
+    --text-color: #555;
+    --heading-color: #1c1c1e;
+    --border-color: #e9e9eb;
+    --shadow-color: rgba(0, 0, 0, 0.07);
+    --star-color: #ffc107;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- CABEÇALHO (Consistente com a outra página) --- */
+.main-header {
+    background-color: var(--card-background);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.logo i {
+    margin-right: 10px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.user-profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-profile span {
+    font-weight: 600;
+    color: var(--heading-color);
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+.main-content {
+    padding: 30px 20px;
+}
+
+.breadcrumb {
+    margin-bottom: 20px;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.course-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 992px) {
+    .course-layout {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+/* --- COLUNA PRINCIPAL (DETALHES) --- */
+.course-main-column {
+    background: var(--card-background);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.course-main-column h1 {
+    font-size: 2.2rem;
+    color: var(--heading-color);
+    margin: 0 0 10px;
+}
+
+.provider-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.provider-logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.provider-name {
+    font-weight: 600;
+}
+
+.course-main-column .short-desc {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.course-section h4 {
+    font-size: 1.4rem;
+    color: var(--heading-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin: 30px 0 20px;
+}
+
+.course-section p, .course-section ul {
+    line-height: 1.7;
+}
+
+.course-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.course-section ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.course-section ul li::before {
+    content: '\f00c'; /* Ícone de check do Font Awesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 4px;
+}
+
+.creator-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.creator-info img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.creator-info h5 {
+    margin: 0 0 5px;
+    font-size: 1.2rem;
+    color: var(--heading-color);
+}
+
+/* --- COLUNA LATERAL (CARD DE AÇÃO) --- */
+.course-sidebar {
+    position: sticky;
+    top: 100px; /* Abaixo do header */
+}
+
+.action-card {
+    background: var(--card-background);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--shadow-color);
+}
+
+.action-card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.action-card-body {
+    padding: 25px;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--heading-color);
+}
+
+.price.free {
+    color: var(--primary-color);
+}
+
+.rating {
+    display: block;
+    margin-top: 5px;
+    color: #777;
+}
+
+.rating span {
+    color: var(--star-color);
+    letter-spacing: 1px;
+}
+
+.access-button-big {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.access-button-big:hover {
+    background-color: var(--primary-hover);
+}
+
+.course-meta {
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+.course-meta li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.course-meta i {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    width: 20px;
+    text-align: center;
+}
+
+/* --- MODAL DE INSCRIÇÃO --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 650px;
+    position: relative;
+    transform: scale(0.95);
+    transition: transform 0.3s;
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #aaa;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.enrollment-section h4 {
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    text-align: center;
+    color: var(--heading-color);
+}
+
+.turma-selector-group, .enrollment-form {
+    margin-top: 20px;
+}
+
+#turma-select, .enrollment-form input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--background-color);
+}
+
+.enrollment-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+@media (min-width: 768px) {
+    .enrollment-form {
+        grid-template-columns: 1fr 1fr;
+    }
+    .form-group.full-width {
+        grid-column: span 2;
+    }
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.modal-content .access-button-big {
+    margin-top: 30px;
+}
+
+/* --- SPINNER --- */
+.loading-spinner-container {
+    display: none;
+    justify-content: center;
+    padding: 50px;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #e3e3e3;
+    border-top: 6px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
