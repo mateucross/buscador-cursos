@@ -2,7 +2,7 @@
 
 ## Configuração do sandbox da rede beckn disponivel em:
 
-- link: 
+- link: https://github.com/mateucross/configurador-sandbox-beckn
 
 ## Apoś configurado o Sandbox da rede beckn siga as intruções abaixo para ter seu bap-web funcional
 
